@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Bachelor Monthly Cost</h1>
+  Income: <input id="income" type="text"> <br>
+  Food: <input id="food" type="text"> <br>
+  Rent: <input id="rent" type="text">  <br>
+  Clothes: <input id="clothes" type="text"> <br>
+  <button id="calculate-btn">Calculate</button>
+  <h3>Total Expenses <span id="total-expenses">00</span></h3>
+  <h3>Balance <span id="balance">00</span></h3>
+</body>
+<script>
+  document.getElementById('calculate-btn').addEventListener('click', ()=>{
+    let income = document.getElementById('income').value;
+    let food = document.getElementById('food').value;
+    let rent = document.getElementById('rent').value;
+    let clothes= document.getElementById('clothes').value;
+    let totalExpenses = document.getElementById('total-expenses')
+    let balance = document.getElementById('balance')
+
+    totalExpenses.innerText =(food * rent + clothes);
+    balance.innerText = income - totalExpenses.innerText;
+
+
+
+  })
+</script>
+</html>
